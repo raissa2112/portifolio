@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Primeiro Ano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="cabecalho">
+    <div id="texto">
+      <a href="#inicio"><button class="botao">Início</button></a>
+      <a href="#projetos"><button class="botao">Projetos</button></a>
+      <a href="#contato"><button class="botao">Contato</button></a>
+    </div>
+  </nav>
+
+ 
+  <section id="inicio">
+    <h1>Portfólio</h1>
+    <img src="perfil.png" alt="Foto de perfil">
+    <h3>Raissa Fonseca</h3>
+    <p>Aqui você encontra alguns dos meus projetos.</p>
+    <a href="#projetos"><button class="botao2">Ver Projetos</button></a>
+  </section>
+
+
+  <section id="projetos">
+    <h1>Projetos</h1>
+    <h2>Alguns dos meus trabalhos</h2>
+
+    <div id="cartao">
+      <div class="quadrado">
+        <h3>🌐 Portfólio Pessoal</h3>
+        <p>Meu site de apresentação com informações e projetos.</p>
+        <button>Ver Projeto</button>
+      </div>
+
+      <div class="quadrado">
+        <h3>🛍 Loja Virtual</h3>
+        <p>Protótipo de e-commerce com carrinho de compras.</p>
+        <button>Ver Projeto</button>
+      </div>
+
+      <div class="quadrado">
+        <h3>📊 Dashboard de Dados</h3>
+        <p>Painel de visualização de dados com gráficos.</p>
+        <button>Ver Projeto</button>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contato">
+    <h1>Contato</h1>
+    <p>Entre em contato comigo pelo WhatsApp preenchendo o formulário abaixo:</p>
+
+    <form id="form-whatsapp">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
+      <button type="submit">Enviar mensagem no WhatsApp</button>
+    </form>
+
+    <p>Me siga nas redes sociais:</p>
+    <div id="redes">
+      <a href="https://www.youtube.com" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+      <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fpt-BR&lang=en&enter_method=mandatory" target="_blank">TikTok</a> 
+    </div>
+  </section>
+
+
+
+</body>
+
+  <script>
+    document.getElementById('form-whatsapp').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const msg = document.getElementById('mensagem').value;
+      const texto = `Olá, me chamo ${nome} (${email}) e gostaria de dizer: ${msg};`
+
+      const url = `https://wa.me/5527992230000?text=${encodeURIComponent(texto)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+  
+</html>
